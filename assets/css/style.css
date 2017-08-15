@@ -1,0 +1,19 @@
+body {
+	font-family: 'Cinzel', serif;
+	background-color: #e3e8f8;
+}
+
+.jumbotron {
+	background-color: #c0c5cd;
+}
+
+#blanks {
+	font-size: 50px;
+	padding: 24px;
+	text-align: center;
+}
+
+p {
+	font-size: 22px;
+	line-height: 150%;
+}

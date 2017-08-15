@@ -2,70 +2,46 @@
 <html>
 <head>
 	<title>Hangman</title>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<h1>Hangman</h1>
-	<p>Start pressing letters on the keyboard to begin guessing</p>
-	<p>You have 9 guesses! Good Luck!</p>
-	<br>
-	<p id="blanks"></p>
-	<br>
-	<p id="letter"></p>
-	<p id="status"></p>
-	<div id="picture"></div>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<h1>Hangman</h1>
+			<p>Start pressing letters on the keyboard to begin guessing</p>
+		</div>
+	</div>
+	<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<p id="blanks"></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="well">
+				<h3>You have <span id="count">9</span> guesses left</h3>
+				<p id="wins">Wins:</p>
+				<p id="losses">Losses:</p>
+				<p id="letter">Letters guessed:</p>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="well">
+				<div id="picture">
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 
-	<script type="text/javascript">
-		var wordArray = ["puppet", "leef", "puppet", "beer"];
-		var randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-		//randomWord = "puppet";
-		var blanks = [];
-		console.log(randomWord);
-		var guessArray = [];
-		var test;
-		var guessCount = 0;
+	
 
-		for (var i = 0; i < randomWord.length; i++) {
-			blanks[i] = "_";
-		}
-		console.log(blanks);
-
-		var wordBlanks = blanks.join(" ");
-		document.getElementById("blanks").innerHTML = wordBlanks;
-		console.log(wordBlanks);
-
-		document.onkeyup = function(event){
-
-			var userInput = event.key;
-			console.log(userInput);
-			
-		
+	<script type="text/javascript" src="assets/javascript/hangman.js"></script>
 
 
-
-
-
-		if (randomWord.indexOf(userInput) === -1) {
-			guessArray.push(userInput);
-			var j = guessArray.join(", ");
-			document.getElementById("status").innerHTML = "Letter Not Found " + guessArray;
-			guessCount++;
-			
-		}	
-		else {
-			
-			console.log(userInput + " is there");
-		}
-
-		if (guessCount === 1) {
-			document.getElementById("picture").innerHTML = '<img src="img0.gif">';
-		} else if (guessCount === 2) {
-			document.getElementById("picture").innerHTML = '<img src="hangmans_noose.jpg">';
-		}
-
-
-
-		};
-
-	</script>
 </body>
 </html>
