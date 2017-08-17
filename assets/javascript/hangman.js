@@ -105,3 +105,10 @@
 				var wordArray = ["puppet", "leef", "puppet", "beer"];
 				return randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 			};
+
+		function winner() {
+
+
+		}
+
+	
