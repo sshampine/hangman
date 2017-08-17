@@ -10,15 +10,6 @@
 		
 		word();
 		start();
-		//for (var i = 0; i < randomWord.length; i++) {
-		//	blanks[i] = "_";
-		//	answerArray[i] = "_";
-		//}
-		//console.log(blanks);
-
-		//var wordBlanks = blanks.join(" ");
-		//document.getElementById("blanks").innerHTML = wordBlanks;
-		//console.log(wordBlanks);
 		var collector = randomWord.length;
 		document.onkeyup = function(event){
 
@@ -56,6 +47,8 @@
 			win++;
 			document.getElementById("wins").innerHTML = "Wins: " + win;
 			alert("winner winner");
+			start();
+
 		}
 
 		if (guessCount === 8) {
@@ -102,12 +95,13 @@
 
 
 		function word() {
-				var wordArray = ["puppet", "leef", "puppet", "beer"];
+				var wordArray = ["puppet", "telephone", "oven", "beer", "book", "bottle", "computer", "trash", "glasses", "table"];
 				return randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 			};
 
-		function winner() {
-
+		function reset() {
+			start()
+			word()
 
 		}
 
